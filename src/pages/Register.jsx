@@ -38,6 +38,7 @@ function Register() {
       setSuccess("Registration successful 🎉");
       setTimeout(() => navigate("/login"), 1500);
     } catch (err) {
+      console.log("Registration error:", err.response?.data);
       setError(err.response?.data?.message || "Registration failed ❌");
     }
   };
