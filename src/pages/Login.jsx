@@ -18,10 +18,7 @@ function Login() {
     setError("");
 
     try {
-      const res = await api.post(
-        "https://caffeinecoveapi-production-a107.up.railway.app/api/login",
-        { email, password },
-      );
+      const res = await api.post("/api/login", { email, password });
 
       // ✅ هنا نخزن بيانات المستخدم بما فيها role
       login(res.data.user, res.data.token);
